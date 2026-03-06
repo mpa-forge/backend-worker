@@ -10,12 +10,20 @@ Go background worker repository for the platform blueprint.
 - `docs/`: worker-specific documentation
 - `scripts/`: local utility and developer scripts
 
+## Toolchain
+- Go `1.24.12`
+- Version pin source: `.tool-versions` and `go.mod`
+
 ## Setup
-This repository is currently at the skeleton stage.
-Go version pinning, bootstrap commands, and dependency wiring will be added in `P1-T03`.
+Run one of the following bootstrap commands from the repository root:
+- PowerShell: `./scripts/bootstrap.ps1`
+- POSIX shell: `./scripts/bootstrap.sh`
+
+Bootstrap validates the pinned Go toolchain and runs `go mod download`.
+If `mise` or `asdf` is available, the script will use it to install the pinned toolchain automatically.
 
 ## Run
-No runnable worker binary exists yet.
+No runnable worker entrypoint exists yet.
 Worker bootstrap and local run commands will be added in later Phase 1 tasks.
 
 ## Test
