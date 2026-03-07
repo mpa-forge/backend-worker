@@ -34,6 +34,18 @@ If `mise` or `asdf` is available, the script will use it to install the pinned t
 - Apply formatting: `make format`
 - Check formatting only: `make format-check`
 
+## Environment
+- Copy `.env.example` to `.env` for local development
+- Required local baseline variables:
+  - `APP_ENV`
+  - `LOG_LEVEL`
+  - `DATABASE_URL`
+  - `WORKER_TICK_INTERVAL`
+- Planned now and enforced once the runtime exists in Phase 2:
+  - `OTEL_MODE`
+  - `OTEL_EXPORTER_OTLP_ENDPOINT`
+  - `OTEL_EXPORTER_OTLP_HEADERS`
+
 ## Run
 No runnable worker entrypoint exists yet.
 Worker bootstrap and local run commands will be added in later Phase 1 tasks.
