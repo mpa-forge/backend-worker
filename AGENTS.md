@@ -10,10 +10,32 @@ Before making changes:
 
 1. Read `README.md`.
 2. Read `Makefile` if present.
-3. Read `../platform-blueprint-specs/docs/shared/agent-common-operating-rules.md`.
-4. Read `../platform-blueprint-specs/docs/shared/agent-platform-workspace-map.md`.
-5. Read `../platform-blueprint-specs/docs/shared/repo-context/backend-worker.md`.
-6. Check local repo docs under `docs/` if the task touches worker runtime details.
+3. Read `../platform-blueprint-specs/common/AGENTS.md`.
+4. Read `../platform-blueprint-specs/.codex/skills/automated-ai-worker/SKILL.md` when the repo is being changed by an automated AI worker or when following the same autonomous workflow manually.
+5. Read `../platform-blueprint-specs/implementation/phases/phase-2-contracts-service-skeletons-and-data-baseline.md`.
+6. Read `../platform-blueprint-specs/implementation/phase-tasks/phase-2-contracts-service-skeletons-and-data-baseline-tasks.md`.
+7. Check local repo docs under `docs/` if the task touches worker runtime details.
+
+## Repo Role
+
+- Own the product background worker runtime, separate from the AI automation worker.
+- Start with a pluggable async adapter and no queue technology locked in yet.
+
+## Relevant Shared Constraints
+
+- Queue strategy remains deferred until product requirements justify it.
+- Worker should still have a clean runtime skeleton, health surface, structured logs, and startup config validation.
+- Shared backend observability library will be introduced so API and worker use one telemetry contract.
+
+## Consult Conditionally
+
+- `../platform-blueprint-specs/platform-specification.md` only when the task needs broader platform architecture or deployment decisions.
+
+## Typical Validation
+
+- `make lint`
+- `make test`
+- `make format-check`
 
 ## Priority of Instructions
 
